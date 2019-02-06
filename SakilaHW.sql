@@ -194,7 +194,7 @@ on (r.rental_id=p.rental_id)
 group by c.name order by Gross  limit 5;
 
 #8A
-create view genre_revenue as
+create view top_five_genres as
 select c.name as 'Genre', sum(p.amount) as 'Gross' 
 from category c
 join film_category fc 
@@ -208,9 +208,9 @@ on (r.rental_id=p.rental_id)
 group by c.name order by Gross  limit 5;
 
 #8B
-select * from genre_revenue;
+select * from top_five_genres;
 
 #8C
-drop view genre_revenue;
+drop view top_five_genres;
 
 
